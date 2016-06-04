@@ -83,7 +83,7 @@
         
         <version>1.0.3</version>
       <configuration>
-      <appName>safe-harbor-42266</appName>
+      <appName>sespringboot</appName>
       </configuration>
       </plugin>
 			
