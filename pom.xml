@@ -6,8 +6,7 @@
 	<groupId>com.ddx.mytestinggroup</groupId>
 	<artifactId>testbootartefact</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	 <packaging>war</packaging> 
-	<!-- <packaging>jar</packaging> -->
+	 <packaging>jar</packaging> 
 	<name>testbootname</name>
 	<description>Demo project for Spring Boot</description>
 
