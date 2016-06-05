@@ -72,9 +72,7 @@
 		<profile>
 			<id>dev</id>
 			<!-- The development profile is active by default -->
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
+			
 			<properties>
 				<!-- Specifies the build.profile.id property that must be equal than 
 					the name of the directory that contains the profile specific configuration 
@@ -114,6 +112,9 @@
 		<!-- The configuration of the production profile -->
 		<profile>
 			<id>prod</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<properties>
 				<!-- Specifies the build.profile.id property that must be equal than 
 					the name of the directory that contains the profile specific configuration 
@@ -148,17 +149,19 @@
 				<configuration>
 					<appName>sespringboot</appName>
 					<includeScope>compile</includeScope>
+					
 				</configuration>
+	
 			</plugin>
 
 
-			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-dependency-plugin</artifactId> 
+			 <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-dependency-plugin</artifactId> 
 				<version>2.3</version> <executions> <execution> <phase>package</phase> <goals> 
 				<goal>copy</goal> </goals> <configuration> <artifactItems> <artifactItem> 
 				<groupId>com.github.jsimone</groupId> <artifactId>webapp-runner</artifactId> 
 				<version>8.0.30.2</version> <destFileName>webapp-runner.jar</destFileName> 
 				</artifactItem> </artifactItems> </configuration> </execution> </executions> 
-				</plugin> -->
+				</plugin> 
 		</plugins>
 	</build>
 			
