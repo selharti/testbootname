@@ -121,6 +121,7 @@
 					of the production profile is prod, we must set the value of the build.profile.id 
 					property to prod. -->
 				<build.profile.id>prod</build.profile.id>
+
 			</properties>
 
 			<dependencies>
@@ -146,6 +147,7 @@
 				<version>1.0.3</version>
 				<configuration>
 					<appName>sespringboot</appName>
+					<includeScope>compile</includeScope>
 				</configuration>
 			</plugin>
 
