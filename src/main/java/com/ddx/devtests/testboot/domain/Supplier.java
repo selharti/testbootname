@@ -1,10 +1,8 @@
 package com.ddx.devtests.testboot.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Version;
+import java.util.Set;
+
+import javax.persistence.*;
 
 @Entity
 public class Supplier {
@@ -17,10 +15,21 @@ public class Supplier {
     private Integer version;
 
     private String supplierId;
-    private String nom;
+    private String name;
     private String address;
-	
-    public Integer getId() {
+    
+    @OneToMany(mappedBy = "productSupplier", cascade = CascadeType.ALL)
+    private Set<Product> products;
+    
+    
+
+    public Set<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}
+	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
@@ -38,11 +47,11 @@ public class Supplier {
 	public void setSupplierId(String supplierId) {
 		this.supplierId = supplierId;
 	}
-	public String getNom() {
-		return nom;
+	public String getName() {
+		return name;
 	}
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setName(String nom) {
+		this.name = nom;
 	}
 	public String getAddress() {
 		return address;

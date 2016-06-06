@@ -1,6 +1,9 @@
 package com.ddx.devtests.testboot.domain;
 
 import javax.persistence.*;
+
+
+
 import java.math.BigDecimal;
 
 @Entity
@@ -16,8 +19,23 @@ public class Product {
     private String description;
     private String imageUrl;
     private BigDecimal price;
+    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "product_supplier_id" )
+    private Supplier productSupplier;
 
-    public String getDescription() {
+    
+    
+
+    public Supplier getProductSupplier() {
+		return productSupplier;
+	}
+
+	public void setProductSupplier(Supplier supplier) {
+		this.productSupplier = supplier;
+	}
+
+	public String getDescription() {
         return description;
     }
 
