@@ -34,6 +34,29 @@
                 </div>
             </div>
      
+           <div class="form-group">
+                <label class="col-sm-2 control-label">Supplier:</label>
+                <div class="col-sm-10">
+                   
+                    
+                    <select th:field="*{productSupplier}">
+  <option th:each="supplier : ${suppliers}" 
+          th:value="${supplier.getId()}" 
+          th:text="${supplier.getName()}">Supplier Name</option>
+</select>
+
+<!-- 
+                   <select th:field="*{productSupplier}">
+  <option th:each="supplier : ${suppliers}" 
+          t h :value="$\{supplier\}" 
+          t h :text="\#\{\$\{'seedstarter.type.' + supplier.get.name}}">Supplier Name</option>
+</select>
+
+ -->
+                    
+                </div>
+            </div>
+     
             
             <div class="row">
                 <button type="submit" class="btn btn-default">Submit</button>

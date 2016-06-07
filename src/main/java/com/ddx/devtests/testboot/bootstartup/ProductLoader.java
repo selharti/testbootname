@@ -26,6 +26,10 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
 	public void setProductRepository(ProductRepository productRepository) {
 		this.productRepository = productRepository;
 	}
+	@Autowired
+	public void setSupplierRepository(SupplierRepository supplierRepository) {
+		this.supplierRepository = supplierRepository;
+	}
 
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -67,15 +71,15 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
 						"https://springframework.guru/wp-content/uploads/2015/04/spring_framework_guru_coffee_mug-r11e7694903c348e1a667dfd2f1474d95_x7j54_8byvr_512.jpg");
 				mug.setProductId("168639393495335947");
 
-				shirt.setProductSupplier(supplierA);
+				mug.setProductSupplier(supplierA);
 
 				
 				productRepository.save(mug);
 
 				log.info("Saved Mug - id:" + mug.getId());
 			} catch (Exception ex) {
-				log.info("On init catched maybe already created...");
-
+				log.error(" ========== ========= ======= On init catched maybe already created...");
+log.error(ex.getStackTrace());
 			}
 		}
 	}
