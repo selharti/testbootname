@@ -25,13 +25,22 @@ public class Supplier {
     private String name;
     private String address;
 
-    @NotNull
+    
     @Email
     private String email;
     
-    @OneToMany(mappedBy = "productSupplier", cascade = CascadeType.ALL)
-    private Set<Product> products;
+    private String phone;
     
+ 	@OneToMany(mappedBy = "productSupplier", cascade = CascadeType.ALL)
+    private Set<Product> products;
+       
+    public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 
     public String getEmail() {
 		return email;

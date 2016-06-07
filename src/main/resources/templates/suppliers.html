@@ -15,7 +15,9 @@
 				<tr>
 					<th>Id</th>
 					<th>Supplier Id</th>
-					<th>Name</th>
+					<th>Name</th>		
+					<th>Email</th>
+					<th>Phone</th>
 					<th>Address</th>
 					<th>Products</th>
 					<th>View</th>
@@ -26,6 +28,8 @@
 					<td th:text="${supplier.id}"><a href="/supplier/${supplier.id}">Id</a></td>
 					<td th:text="${supplier.supplierId}">Supplier Id</td>
 					<td th:text="${supplier.name}">Name</td>
+					<td th:text="${supplier.email}">Email</td>
+					<td th:text="${supplier.phone}">Phone</td>
 					<td th:text="${supplier.address}">Address</td>
 					<td>
 						<table class="table table-striped">
