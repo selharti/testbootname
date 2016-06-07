@@ -1,8 +1,12 @@
 package com.ddx.devtests.testboot.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -44,11 +48,33 @@ public class SupplierController {
         return "supplierform";
     }
 
+    
+    // Try new ==
+    /*
     @RequestMapping(value = "supplier", method = RequestMethod.POST)
     public String saveSupplier(Supplier supplier){
         supplierService.saveSupplier(supplier);
         return "redirect:/supplier/" + supplier.getId();
     }
+    */
+    
+    @RequestMapping(value = "supplier", method = RequestMethod.POST)
+    public String saveSupplier(
+    		@ModelAttribute("supplier") @Valid	Supplier supplier, 
+    		BindingResult bindingResult,
+			Model model){
+    	if (bindingResult.hasErrors())
+    	{// return to form
+            return "supplierform";
+    		
+    	}else{
+	        supplierService.saveSupplier(supplier);
+	        return "redirect:/supplier/" + supplier.getId();
+    	}
+    }
+
+    
+    /* ==== */ 
 
     @RequestMapping("supplier/delete/{id}")
     public String delete(@PathVariable Integer id){

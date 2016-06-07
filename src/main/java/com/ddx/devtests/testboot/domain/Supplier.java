@@ -3,6 +3,10 @@ package com.ddx.devtests.testboot.domain;
 import java.util.Set;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
 
 @Entity
 public class Supplier {
@@ -15,15 +19,29 @@ public class Supplier {
     private Integer version;
 
     private String supplierId;
+    
+    
+    @Size(min = 3, max=50)
     private String name;
     private String address;
+
+    @NotNull
+    @Email
+    private String email;
     
     @OneToMany(mappedBy = "productSupplier", cascade = CascadeType.ALL)
     private Set<Product> products;
     
-    
 
-    public Set<Product> getProducts() {
+    public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	
+	public Set<Product> getProducts() {
 		return products;
 	}
 	public void setProducts(Set<Product> products) {
@@ -50,8 +68,8 @@ public class Supplier {
 	public String getName() {
 		return name;
 	}
-	public void setName(String nom) {
-		this.name = nom;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getAddress() {
 		return address;
