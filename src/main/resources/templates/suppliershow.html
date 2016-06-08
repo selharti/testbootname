@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
+<head>
 
     <title>Spring Framework Guru</title>
 
     <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
 </head>
 <body>
-<div class="container">
+<div class="container" th:dir="__${#locale}__=='ar'?'rtl':'ltr'" th:lang="__${#locale}__">
     <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
 
-    <h2>Supplier Details</h2>
+    <h2><span th:text="#{title.supplier.show}" /></h2>
         <div>
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Supplier Id:</label>
+            <form class="form-horizontal form-horizontal2" >
+                <div class="form-group form-group2">
+                    <label class="col-sm-2 control-label" th:text="#{label.supplier.id}">Supplier Id:</label>
                     <div class="col-sm-10">
                         <p class="form-control-static" th:text="${supplier.id}">Supplier Id</p></div>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Name:</label>
+                <div class="form-group form-group2">
+                    <label class="col-sm-2 control-label" th:text="#{label.supplier.name}" >Name:</label>
                     <div class="col-sm-10">
                         <p class="form-control-static" th:text="${supplier.name}">Name</p>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Email:</label>
+                <div class="form-group form-group2">
+                    <label class="col-sm-2 control-label" th:text="#{label.supplier.email}" >Email:</label>
                     <div class="col-sm-10">
                         <p class="form-control-static" th:text="${supplier.email}">Email</p>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Phone:</label>
+                <div class="form-group form-group2">
+                    <label class="col-sm-2 control-label" th:text="#{label.supplier.phone}">Phone:</label>
                     <div class="col-sm-10">
                         <p class="form-control-static" th:text="${supplier.phone}">Phone</p>
                     </div>
                 </div>                
                 
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Address:</label>
+                <div class="form-group form-group2">
+                    <label class="col-sm-2 control-label" th:text="#{label.supplier.address}">Address:</label>
                     <div class="col-sm-10">
                         <p class="form-control-static" th:text="${supplier.address}">Address</p>
                     </div>
