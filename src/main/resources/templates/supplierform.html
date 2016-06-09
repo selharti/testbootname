@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+th:include="layout :: layout">
 
-<title>Spring Framework Guru title in form  </title>
-
-<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
-</head>
 <body>
-	<div class="container">
-		<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+<div  th:fragment="content" class="container"    >
 
 		<h2>Supplier Details C1 c2 c3</h2>
 		<div>

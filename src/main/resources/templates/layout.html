@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link
+	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+
+<link href="../static/css/testboot.css" th:href="@{/css/testboot.css}"
+	rel="stylesheet" media="screen" />
+
+<link href="../static/css/testboot_ar.css"
+	th:href="@{/css/testboot_ar.css}" rel="stylesheet" media="screen"
+	th:if="__${#locale}__=='ar'" />
+
+
+<meta name="description" content="This a test" />
+<meta name="author" content="Me and others" />
+<link rel="icon" href="/favicon.ico" />
+
+<title th:text="#{title.application}">Application Title</title>
+</head>
+<body>
+	<div class="container" th:dir="__${#locale}__=='ar'?'rtl':'ltr'"
+		th:lang="__${#locale}__">
+		<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+		<!--/*/  <th:block th:include="this :: content"  ></th:block> /*/-->
+	</div>
+
+
+	<footer class="container" th:fragment="footer">
+		<p>My footer</p>
+	</footer>
+
+	<script
+		src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+		th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+	<script
+		src="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/js/bootstrap.min.js"
+		th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>
